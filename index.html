@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script><!--Более поздние версии могут не поддерживать tabs!!!-->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="style.css">
+<script type="text/javascript" charset="windows-1251" src="script.js"></script><!--Другая кодировка для js-файла -->
+
+</head>
+
+<body onload="go()">
+
+<h1>Durchchecken Sie Ihre Gehirnprothese</h1>
+<h3>нем. проверьте свой калькулятор (das Gehirn - мозг, die Prothese - протез)</h3>
+
+  <span>
+    <span id="tab_name1" class="active_tab">Проверка</span>
+    <span id="tab_name2" class="passive_tab">Установка</span>
+  </span>
+
+<article class="background">
+  
+<div id="tab1"> 
+
+<div id="calculus_block">
+
+<span id="task"></span>
+<span id="var1"></span><!--Первая переменная.-->
+<span id="operation"></span><!--Вид операции: +, -, *, /-->
+<span id="var2"></span><!--Вторая переменная.-->
+<input id="getInput" type="button" value="=" title="Click to submit!" /><!--Кнопка = -->
+<input type="text" id="userInput" size="8" maxlength="10" autocomplete=off /><!--Ограничение количества, введённых пользователем, символов.-->
+<p id="test"></p>
+
+</div>
+  
+  
+<table cellspacing="0" id="maket">
+
+<tr> 
+<td class="leftcol">Правильных ответов</td>
+<td id="cor" class="rightcol"></td>
+</tr>
+<tr> 
+<td class="leftcol">Неправильных ответов</td>
+<td id="incor" class="rightcol"></td>
+</tr>
+<tr> 
+<td class="leftcol">Всего</td>
+<td id="all_cor_incor" class="rightcol"></td>
+</tr>
+</table>
+
+</div>
+  
+<div id="tab2" class="display_none">
+
+   <p>Выберите тип генерируемых примеров.</p>
+   <p><input type="checkbox" id="plus" class="operator" value="+" checked >+</p>
+   <p><input type="checkbox" id="minus" class="operator" value="-" >-</p>
+   <p><input type="checkbox" id="multi" class="operator" value="*">*</p>
+   <p><input type="checkbox" id="div" class="operator" value="/">/</p>
+
+</div>
+
+</article>  
+</body>
+</html>

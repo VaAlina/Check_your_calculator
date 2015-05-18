@@ -1,6 +1,7 @@
 $(document).ready(function(){
 
 //Начало кода для табов.
+//Starts code for tabs.
 $("#tab_name2").click(function(){
   $(this).removeClass("passive_tab");
   $(this).addClass("active_tab");
@@ -21,16 +22,19 @@ $("#tab_name1").click(function(){
 	}
   });
 //Конец кода для табов.
+//Ends code for tabs.
 
 
 
 //Начало валидации ввода пользователя.
+//Starts user iput validation.
 $('input#userInput').keyup(function(e){
     if (/\D/g.test(this.value)){//Не допускает ввод не чисел.
         this.value = this.value.replace(/\D/g, '');
     }
 });
 //Конец валидации ввода пользователя.
+//Ends user input validation.
 
 
 });
@@ -44,11 +48,12 @@ all=0;
 
 var go = function(){
 //Начало основной части программы.
-
+//Starts main part of the program.
 
 
 //Создаю основной объект.
-//Начало объявления классов.
+//Creating new object.
+
 function Manipulation(num1, num2){
   this.num1 = num1;
   this.num2 = num2;
@@ -57,34 +62,45 @@ function Manipulation(num1, num2){
   this.minus = num1-num2;
   this.div = num1/num2;
 }
-//Конец объявлению классов.
 
+//Массив с видами операций. Плюс выбран по-умолчанию.
+//An array with operation types. "+" is default.
+var operationType = ["+"]; 
 
-var operationType = ["+"]; //Массив с видами операций. Плюс выбран по-умолчанию.
-    
-$("input:checkbox:checked").map(function(){//Если выбрана еще какая-нибудь операция - этот код добавит её в массив.
+//Если выбрана еще какая-нибудь операция - этот код добавит её в массив.
+//If any other operation type was chosen, then the code will add it to the array.
+$("input:checkbox:checked").map(function(){
   operationType.push($(this).val());
 });
 	
 	
-	
-var rand = Math.floor( Math.random() * operationType.length ); //Генерация случайной операции из заданного массива.
+//Генерация случайной операции из заданного массива.
+//Generation of random operation from our operation array.
+var rand = Math.floor( Math.random() * operationType.length ); 
 var operation = operationType[rand];
 
-while((n1 % n2) != 0 || (n1 - n2) < 0 || n1 == n2 || n2 == 1 || n2 == 2){//Исключаю генерацию видов результата: с остатком, отрицательного, с одинаковыли либо слишком простыми (1, 2) переменными.
-  var n1 = Math.round(Math.random()*100);//Генерирую 2 случайные переменные в диапазоне от 1 до 100.
+//Исключаю генерацию видов результата: с остатком, отрицательного, с одинаковыли либо слишком простыми (1, 2) переменными.
+//Validation of results. Let`s remove the nagative result, the result with too simple variables (such as 1, 2).
+while((n1 % n2) != 0 || (n1 - n2) < 0 || n1 == n2 || n2 == 1 || n2 == 2){
+  //Генерирую 2 случайные переменные в диапазоне от 1 до 100.
+  //Generate 2 random variables from 1 to 100.
+  var n1 = Math.round(Math.random()*100);
   var n2 = Math.round(Math.random()*100);
 }
 
 
+//Создаю новый объект.
+//Creating new object.
+var s = new Manipulation(n1, n2); 
 
-var s = new Manipulation(n1, n2); //Создаю новый объект.
-
-document.getElementById("var1").innerHTML = s.num1;//Записываю полученные переменные и операцию.
+//Записываю полученные переменные и операцию.
+//Printing variables and operation.
+document.getElementById("var1").innerHTML = s.num1;
 document.getElementById("operation").innerHTML = operation;
 document.getElementById("var2").innerHTML = s.num2;
 
 //Получить результат операции.
+//Getting operation result.
 switch(operation){
   case "+":{ 
     result = s.sum;
@@ -109,13 +125,18 @@ switch(operation){
 
 
 //Отображение результата вычислений на экране.
-$("#getInput").click(function(){//Получить ввод пользователя.
-  var userInput = document.getElementsByTagName('input')[1].value;//Получить данные со второго тэга input.
+//Displaing the result on the screen.
+$("#getInput").click(function(){
+  //Получить ввод пользователя.
+  //Gets user input.
+  var userInput = document.getElementsByTagName('input')[1].value;
+  //Получить данные со второго тэга input.
+  //Gets the data from second user input.
   if(userInput == result){
 	correct ++;
 	all++;
 	$("#cor").text(correct);//В поле в этим id, поместить количество правильных ответов.
-	$("#incor").text(incorrect);
+	$("#incor").text(incorrect);//Puts the amount of correct ansvers in field with this id.
 	$("#all_cor_incor").text(all);
 	document.getElementById("test").innerHTML = "Правильно!";
   }else{
@@ -133,6 +154,7 @@ $("#getInput").click(function(){//Получить ввод пользовате
 })
 
 //Отображение результата в таблице.
+//Displays the result in the table.
 $(document).ready(function(){
   $("#getInput").click(function(){
     $("#cor").text(correct);
@@ -141,7 +163,10 @@ $(document).ready(function(){
   });
 });
 
-s = null;//Удаляю объект.
-go();//Рекурсия.
+//Удаляю объект.
+//Deleting an object that I`ve just created. So I will create one more object with another properties.
+s = null;
+go();//Рекурсия. Recursion.
 }
 //Конец основной части программы.
+//The end of the main programm part.

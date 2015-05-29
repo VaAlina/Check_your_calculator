@@ -26,9 +26,7 @@ $('input#userInput').keyup(function(e){
 
 
 
-correct=0;
-incorrect=0;
-all=0;
+var correct=0, incorrect=0, all=0;
 
 var go = function(){
 //Starts main part of the program.

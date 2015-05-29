@@ -2,12 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8"/>
-
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script><!--Более поздние версии могут не поддерживать tabs!!!-->
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <link rel="stylesheet" type="text/css" href="style.css">
-<script type="text/javascript" charset="windows-1251" src="script.js"></script><!--Другая кодировка для js-файла -->
-
 </head>
 
 <body onload="go()">
@@ -15,23 +10,23 @@
 <h1>Durchchecken Sie Ihre Gehirnprothese</h1>
 <h3>нем. проверьте свой калькулятор (das Gehirn - мозг, die Prothese - протез)</h3>
 
-  <span>
-    <span id="tab_name1" class="active_tab">Проверка</span>
-    <span id="tab_name2" class="passive_tab">Установка</span>
-  </span>
-
+<span>
+<span id="tab_name1" class="tab active_tab">Проверка</span>
+<span id="tab_name2" class="tab passive_tab">Установка</span>
+<span id="tab_name3" class="tab passive_tab">Эффективность</span>
+</span>
 <article class="background">
   
-<div id="tab1"> 
+<div id="tab1" class="tab_content">
 
 <div id="calculus_block">
 
 <span id="task"></span>
-<span id="var1"></span><!--Первая переменная.-->
-<span id="operation"></span><!--Вид операции: +, -, *, /-->
-<span id="var2"></span><!--Вторая переменная.-->
-<input id="getInput" type="button" value="=" title="Click to submit!" /><!--Кнопка = -->
-<input type="text" id="userInput" size="8" maxlength="10" autocomplete=off /><!--Ограничение количества, введённых пользователем, символов.-->
+<span id="var1"></span><!--First variable.-->
+<span id="operation"></span><!--Operation type: +, -, *, /-->
+<span id="var2"></span><!--Second variable.-->
+<input id="getInput" type="button" value="=" title="Click to submit!" /><!--Button = -->
+<input type="text" id="userInput" size="8" maxlength="10" autocomplete=off /><!--Set amount of user input.-->
 <p id="test"></p>
 
 </div>
@@ -40,31 +35,38 @@
 <table cellspacing="0" id="maket">
 
 <tr> 
-<td class="leftcol">Правильных ответов</td>
+<td class="leftcol">Correct ansvers</td>
 <td id="cor" class="rightcol"></td>
 </tr>
 <tr> 
-<td class="leftcol">Неправильных ответов</td>
+<td class="leftcol">Incorrect ansvers</td>
 <td id="incor" class="rightcol"></td>
 </tr>
 <tr> 
-<td class="leftcol">Всего</td>
+<td class="leftcol">Total</td>
 <td id="all_cor_incor" class="rightcol"></td>
 </tr>
 </table>
 
 </div>
   
-<div id="tab2" class="display_none">
+<div id="tab2" class="display_none tab_content">
 
-   <p>Выберите тип генерируемых примеров.</p>
-   <p><input type="checkbox" id="plus" class="operator" value="+" checked >+</p>
-   <p><input type="checkbox" id="minus" class="operator" value="-" >-</p>
-   <p><input type="checkbox" id="multi" class="operator" value="*">*</p>
-   <p><input type="checkbox" id="div" class="operator" value="/">/</p>
+<p>Choose operation types.</p>
+<p><input type="checkbox" id="plus" class="operator" value="+" checked >+</p>
+<p><input type="checkbox" id="minus" class="operator" value="-" >-</p>
+<p><input type="checkbox" id="multi" class="operator" value="*">*</p>
+<p><input type="checkbox" id="div" class="operator" value="/">/</p>
 
 </div>
 
+<div id="tab3" class="display_none tab_content">
+Graph
+</div>
+
 </article>  
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script><!--Later versions may not support tabs!!!-->
+<script type="text/javascript" charset="utf-8" src="script.js"></script>
 </body>
 </html>

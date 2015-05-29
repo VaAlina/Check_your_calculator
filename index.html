@@ -1,71 +1,67 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="utf-8"/>
-<link rel="stylesheet" type="text/css" href="style.css">
-</head>
+    <head>
+        <meta charset="utf-8"/>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
 
-<body>
+    <body>
+        <h1>Check your calculator!</h1>
+        <span>
+            <span id="tab_name1" class="tab active_tab">Main</span>
+            <span id="tab_name2" class="tab passive_tab">Settings</span>
+            <span id="tab_name3" class="tab passive_tab">Effectiveness</span>
+        </span>
+       
+	   
+       <div id="tab1" class="tab_content background">
 
-<h1>Check your calculator!</h1>
-
-<span>
-<span id="tab_name1" class="tab active_tab">Main</span>
-<span id="tab_name2" class="tab passive_tab">Settings</span>
-<span id="tab_name3" class="tab passive_tab">Effectiveness</span>
-</span>
-<article class="background">
-  
-<div id="tab1" class="tab_content">
-
-<div id="calculus_block">
-
-<span id="task"></span>
-<span id="var1"></span><!--First variable.-->
-<span id="operation"></span><!--Operation type: +, -, *, /-->
-<span id="var2"></span><!--Second variable.-->
-<input id="getInput" type="button" value="=" title="Click to submit!" /><!--Button = -->
-<input type="text" id="userInput" size="8" maxlength="10" autocomplete=off /><!--Set amount of user input.-->
-<p id="test"></p>
-
-</div>
+            <div id="calculus_block">
+                <span id="task"></span>
+                <span id="var1"></span><!--First variable.-->
+                <span id="operation"></span><!--Operation type: +, -, *, /-->
+                <span id="var2"></span><!--Second variable.-->
+                <input id="getInput" type="button" value="=" title="Click to submit!" /><!--Button = -->
+                <input type="text" id="userInput" size="8" maxlength="10" autocomplete=off /><!--Set amount of user input.-->
+                <p id="test"></p>
+            </div>
   
   
-<table cellspacing="0" id="maket">
+            <table cellspacing="0" id="maket">
 
-<tr> 
-<td class="leftcol">Correct ansvers</td>
-<td id="cor" class="rightcol"></td>
-</tr>
-<tr> 
-<td class="leftcol">Incorrect ansvers</td>
-<td id="incor" class="rightcol"></td>
-</tr>
-<tr> 
-<td class="leftcol">Total</td>
-<td id="all_cor_incor" class="rightcol"></td>
-</tr>
-</table>
+                <tr> 
+                    <td class="leftcol">Correct ansvers</td>
+                    <td id="cor" class="rightcol"></td>
+                </tr>
+                <tr> 
+                    <td class="leftcol">Incorrect ansvers</td>
+                    <td id="incor" class="rightcol"></td>
+                </tr>
+                <tr> 
+                    <td class="leftcol">Total</td>
+                    <td id="all_cor_incor" class="rightcol"></td>
+                </tr>
+            </table>
 
-</div>
+        </div>
   
-<div id="tab2" class="display_none tab_content">
+        <div id="tab2" class="display_none tab_content">
 
-<p>Choose operation types.</p>
-<p><input type="checkbox" id="plus" class="operator" value="+" checked >+</p>
-<p><input type="checkbox" id="minus" class="operator" value="-" >-</p>
-<p><input type="checkbox" id="multi" class="operator" value="*">*</p>
-<p><input type="checkbox" id="div" class="operator" value="/">/</p>
+            <p>Choose operation types.</p>
+            <p><input type="checkbox" id="plus" class="operator" value="+" checked >+</p>
+            <p><input type="checkbox" id="minus" class="operator" value="-" >-</p>
+            <p><input type="checkbox" id="multi" class="operator" value="*">*</p>
+            <p><input type="checkbox" id="div" class="operator" value="/">/</p>
 
-</div>
+        </div>
 
-<div id="tab3" class="display_none tab_content">
-Graph
-</div>
+        <div id="tab3" class="display_none tab_content">
+            Graph
+        </div>
 
-</article>  
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script><!--Later versions may not support tabs!!!-->
-<script type="text/javascript" charset="utf-8" src="script.js"></script>
-</body>
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script><!--Later versions may not support tabs!!!-->
+        <script type="text/javascript" charset="utf-8" src="script.js"></script>
+    </body>
 </html>

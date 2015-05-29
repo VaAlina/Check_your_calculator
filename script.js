@@ -1,5 +1,5 @@
 $(function(){
-
+go();
 //Starts code for tabs.
 $(".tab").click(function(){
   var id = (this).id.slice(8,10);
